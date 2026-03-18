@@ -370,9 +370,9 @@ def dfSort(df):
 @st.cache_data
 def trainModel(traindat, valdat, testdat, _model, pred_val):
   xval = traindat[['SpeedLag1', 'VolLag1', 'VPLLag1', 'OccLag1']]
-  model.fit(xval, traindat[pred_val].to_frame())
+  _model.fit(xval, traindat[pred_val].to_frame())
 
-  return model
+  return _model
 
 clf = Lasso(alpha=0.1)
 
