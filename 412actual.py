@@ -55,7 +55,7 @@ st.map(gdf.rename(columns={"Latitude": "lat", "Longitude": "lon"}))
 # -----------------------------------------------------------------------------------------
 # --- E/R Diagram ---
 st.header("E/R Diagram")
-st.image("CEE412Project/ERDiagram.png")
+st.image("ERDiagram.png")
 
 # -----------------------------------------------------------------------------------------
 # --- Data Showcase ---
