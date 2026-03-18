@@ -28,9 +28,9 @@ st.markdown("""
 """)
 
 # --- Import data ---
-rawI5 = pd.read_csv("CEE412Project/005es16732_loop_cloutput.csv")
-rawSR520 = pd.read_csv("CEE412Project/520es00972_loop_cloutput.csv")
-SR520 = pd.read_excel("CEE412Project/520es00972_MW___3_MoTuWeThFr_2015-01-01_2015-12-31.xlsx", sheet_name="Volume")
+rawI5 = pd.read_csv("005es16732_loop_cloutput.csv")
+rawSR520 = pd.read_csv("520es00972_loop_cloutput.csv")
+SR520 = pd.read_excel("520es00972_MW___3_MoTuWeThFr_2015-01-01_2015-12-31.xlsx", sheet_name="Volume")
 
 # --- Setting up data ---
 rawI5["DateTime"] = pd.to_datetime(rawI5["DateTime"])
