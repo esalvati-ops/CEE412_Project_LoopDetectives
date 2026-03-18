@@ -368,7 +368,7 @@ def dfSort(df):
   return sorted, train, val, test
     
 @st.cache_data
-def trainModel(traindat, valdat, testdat, model, pred_val):
+def trainModel(traindat, valdat, testdat, _model, pred_val):
   xval = traindat[['SpeedLag1', 'VolLag1', 'VPLLag1', 'OccLag1']]
   model.fit(xval, traindat[pred_val].to_frame())
 
