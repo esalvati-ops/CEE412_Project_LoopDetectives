@@ -340,6 +340,8 @@ with col2:
 st.header("Modeling I-5")
 
 # modeled data
+
+@st.cache_data
 def timelag(df1, df2, shiftn):
   df1[['SpeedLag1',
        'VolLag1',
@@ -353,7 +355,8 @@ def timelag(df1, df2, shiftn):
   if 'Unnamed: 0' in df1.columns:
     df1 = df1.drop('Unnamed: 0', axis = 1)
   return df1
-
+    
+@st.cache_data
 def dfSort(df):
   sorted = df.dropna().reset_index(drop=True)
   cutoff_train = sorted["DateTime"].quantile(0.70)
@@ -363,7 +366,8 @@ def dfSort(df):
   val   = sorted[(sorted["DateTime"] >= cutoff_train) & (sorted["DateTime"] < cutoff_val)]
   test  = sorted[sorted["DateTime"] >= cutoff_val]
   return sorted, train, val, test
-
+    
+@st.cache_data
 def trainModel(traindat, valdat, testdat, model, pred_val):
   xval = traindat[['SpeedLag1', 'VolLag1', 'VPLLag1', 'OccLag1']]
   model.fit(xval, traindat[pred_val].to_frame())
